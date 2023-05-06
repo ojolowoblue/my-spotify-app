@@ -48,7 +48,7 @@ if (cluster.isPrimary) {
     );
 
   app.get("/", (req, res) => {
-    res.render(<h1>Hello People</h1>);
+    res.send("Hello");
   });
 
   app.get("/login", (req, res) => {
@@ -112,7 +112,7 @@ if (cluster.isPrimary) {
   });
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./build/index.html"));
+    res.send("Hello");
   });
 
   app.listen(PORT);
