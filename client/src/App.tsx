@@ -1,4 +1,5 @@
 import useToken from "app/hooks/useToken";
+import AppWrapper from "app/layout/AppWrapper";
 import Home from "app/views/Home";
 import Login from "app/views/Login";
 
@@ -6,7 +7,9 @@ function App() {
   const token = useToken();
 
   return (
-    <div className="App">{token !== "undefined" ? <Home /> : <Login />}</div>
+    <AppWrapper>
+      <div className="App">{token !== "undefined" ? <Home /> : <Login />}</div>
+    </AppWrapper>
   );
 }
 
