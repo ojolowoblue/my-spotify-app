@@ -12,7 +12,7 @@ import {
  * @returns {string}
  */
 
-export const encodeString = (str: string) =>
+export const encodeString = (str: string): string =>
   btoa(
     encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p1) =>
       String.fromCharCode(parseInt(p1, 16))
@@ -25,7 +25,7 @@ export const encodeString = (str: string) =>
  * @returns {string}
  */
 
-export const decodeString = (str: string) =>
+export const decodeString = (str: string): string =>
   decodeURIComponent(
     Array.prototype.map
       .call(

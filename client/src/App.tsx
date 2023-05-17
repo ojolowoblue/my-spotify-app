@@ -1,4 +1,4 @@
-import useToken from "app/hooks/useToken";
+import useToken from "app/lib/getToken";
 import AppWrapper from "app/layout/AppWrapper";
 import Home from "app/views/Home";
 import Login from "app/views/Login";

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import {
   getHashParams,
   getLocalAccessToken,
@@ -16,10 +14,10 @@ const EXPIRATION_TIME = 3600 * 1000; // 1 hour
  * @returns {string} returns an 'access_token'
  */
 
-export default function useToken() {
+export default function getToken() {
   const { error, access_token, refresh_token } = getHashParams();
 
-  const [accessToken, setAccessToken] = React.useState<string>();
+  const accessToken = getLocalAccessToken();
 
   if (error) {
     console.error(error);
@@ -31,10 +29,6 @@ export default function useToken() {
     console.warn("Access token has expired, refreshing...");
     refreshAccessToken();
   }
-
-  React.useEffect(() => {
-    setAccessToken(getLocalAccessToken());
-  }, []);
 
   // If there is no ACCESS token in local storage, set it and return `access_token` from params
   if ((!accessToken || accessToken === "undefined") && access_token) {
