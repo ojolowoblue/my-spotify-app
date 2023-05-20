@@ -5,8 +5,8 @@ const storage = {
     const item = STORAGE.getItem(key);
     return item ?? "";
   },
-  set(key: string, value: Object) {
-    STORAGE.setItem(key, JSON.stringify(value));
+  set(key: string, value: any) {
+    STORAGE.setItem(key, value);
   },
   remove(key: string) {
     STORAGE.removeItem(key);

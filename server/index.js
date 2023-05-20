@@ -115,5 +115,5 @@ if (cluster.isPrimary) {
     res.send("Hello");
   });
 
-  app.listen(PORT);
+  app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
 }
