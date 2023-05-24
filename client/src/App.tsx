@@ -8,7 +8,7 @@ function App() {
 
   return (
     <AppWrapper>
-      <div className="App">{!token ? <Home /> : <Login />}</div>
+      <div className="App">{token ? <Home /> : <Login />}</div>
     </AppWrapper>
   );
 }
